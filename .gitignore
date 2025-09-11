@@ -48,3 +48,11 @@ dump.rdb
 
 mcp.json
 /.junie/
+
+# Azure sensitive files
+azure-credentials.json
+azure-github-secrets.md
+azure-secrets-ready.txt
+COMPLETE-GITHUB-SECRETS.txt
+*.pem
+*.key
