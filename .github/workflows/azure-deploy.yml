@@ -70,10 +70,10 @@ jobs:
     - name: Deploy to Azure Container Apps
       uses: azure/container-apps-deploy-action@v1
       with:
-        resource-group: ${{ env.AZURE_RESOURCE_GROUP }}
-        container-app-name: ${{ env.AZURE_WEBAPP_NAME }}
-        container-image: ${{ needs.build.outputs.image-tag }}
-        environment-variables: |
+        resourceGroup: ${{ env.AZURE_RESOURCE_GROUP }}
+        containerAppName: ${{ env.AZURE_WEBAPP_NAME }}
+        imageToDeploy: ${{ needs.build.outputs.image-tag }}
+        environmentVariables: |
           PG_DATABASE_URL=${{ secrets.PG_DATABASE_URL }}
           REDIS_URL=${{ secrets.REDIS_URL }}
           ACCESS_TOKEN_SECRET=${{ secrets.ACCESS_TOKEN_SECRET }}
@@ -85,5 +85,5 @@ jobs:
           MESSAGE_QUEUE_TYPE=redis
           REACT_APP_SERVER_BASE_URL=${{ secrets.REACT_APP_SERVER_BASE_URL }}
           IS_BILLING_ENABLED=false
-        target-port: 3000
+        targetPort: 3000
         ingress: external
