@@ -14,9 +14,6 @@ env:
 jobs:
   build:
     runs-on: ubuntu-latest
-    
-    outputs:
-      image-tag: ${{ steps.meta.outputs.tags }}
       
     steps:
     - name: Checkout code
@@ -72,7 +69,7 @@ jobs:
       with:
         resourceGroup: ${{ env.AZURE_RESOURCE_GROUP }}
         containerAppName: ${{ env.AZURE_WEBAPP_NAME }}
-        imageToDeploy: ${{ needs.build.outputs.image-tag }}
+        imageToDeploy: ${{ env.CONTAINER_REGISTRY }}/savoira-dev-app:${{ github.ref_name }}
         registryUrl: ${{ env.CONTAINER_REGISTRY }}
         registryUsername: ${{ secrets.AZURE_REGISTRY_USERNAME }}
         registryPassword: ${{ secrets.AZURE_REGISTRY_PASSWORD }}
@@ -89,4 +86,4 @@ jobs:
           REACT_APP_SERVER_BASE_URL=${{ secrets.REACT_APP_SERVER_BASE_URL }}
           IS_BILLING_ENABLED=false
         targetPort: 3000
-        ingress: external# Updated Azure Registry Credentials
+        ingress: external
