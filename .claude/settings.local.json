@@ -1,0 +1,38 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(docker-compose:*)",
+      "Bash(docker compose:*)",
+      "Bash(yarn install)",
+      "Bash(npx nx database:reset:*)",
+      "Bash(yarn start)",
+      "mcp__github__get_me",
+      "mcp__github__list_workflows",
+      "Bash(chmod:*)",
+      "Bash(az provider list:*)",
+      "Bash(az provider register:*)",
+      "Bash(az ad sp create-for-rbac:*)",
+      "Bash(./scripts/azure-setup.sh:*)",
+      "Bash(az postgres flexible-server list:*)",
+      "Bash(az postgres flexible-server show:*)",
+      "Bash(az redis create:*)",
+      "Bash(az resource list:*)",
+      "Bash(az redis show:*)",
+      "Bash(az postgres flexible-server db create:*)",
+      "Bash(az containerapp env create:*)",
+      "Bash(openssl rand:*)",
+      "Bash(az redis list-keys:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)",
+      "mcp__github__list_workflow_runs",
+      "mcp__github__get_job_logs",
+      "mcp__github__get_workflow_run",
+      "mcp__github__get_file_contents",
+      "mcp__github__list_workflow_jobs",
+      "Bash(az acr credential show:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

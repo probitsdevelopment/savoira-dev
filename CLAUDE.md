@@ -145,3 +145,4 @@ packages/
 - `tsconfig.base.json` - Base TypeScript configuration
 - `package.json` - Root package with workspace definitions
 - `.cursor/rules/` - Development guidelines and best practices
+- use the project name as savoira-dev everywhere not twenty
