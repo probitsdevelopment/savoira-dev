@@ -5,6 +5,8 @@ on:
       - 'v*'
 jobs:
   deploy-tag:
+    # Disabled for fork - using Azure deployment instead
+    if: github.repository == 'twentyhq/twenty'
     timeout-minutes: 3
     runs-on: ubuntu-latest
     steps:
