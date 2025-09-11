@@ -73,17 +73,6 @@ jobs:
         registryUrl: ${{ env.CONTAINER_REGISTRY }}
         registryUsername: ${{ secrets.AZURE_REGISTRY_USERNAME }}
         registryPassword: ${{ secrets.AZURE_REGISTRY_PASSWORD }}
-        environmentVariables: |
-          PG_DATABASE_URL=${{ secrets.PG_DATABASE_URL }}
-          REDIS_URL=${{ secrets.REDIS_URL }}
-          ACCESS_TOKEN_SECRET=${{ secrets.ACCESS_TOKEN_SECRET }}
-          REFRESH_TOKEN_SECRET=${{ secrets.REFRESH_TOKEN_SECRET }}
-          LOGIN_TOKEN_SECRET=${{ secrets.LOGIN_TOKEN_SECRET }}
-          FILE_TOKEN_SECRET=${{ secrets.FILE_TOKEN_SECRET }}
-          SAVOIRA_POSTGRES_ADMIN_PASSWORD=${{ secrets.SAVOIRA_POSTGRES_ADMIN_PASSWORD }}
-          STORAGE_TYPE=local
-          MESSAGE_QUEUE_TYPE=redis
-          REACT_APP_SERVER_BASE_URL=${{ secrets.REACT_APP_SERVER_BASE_URL }}
-          IS_BILLING_ENABLED=false
+        environmentVariables: 'PG_DATABASE_URL=${{ secrets.PG_DATABASE_URL }} REDIS_URL=${{ secrets.REDIS_URL }} ACCESS_TOKEN_SECRET=${{ secrets.ACCESS_TOKEN_SECRET }} REFRESH_TOKEN_SECRET=${{ secrets.REFRESH_TOKEN_SECRET }} LOGIN_TOKEN_SECRET=${{ secrets.LOGIN_TOKEN_SECRET }} FILE_TOKEN_SECRET=${{ secrets.FILE_TOKEN_SECRET }} SAVOIRA_POSTGRES_ADMIN_PASSWORD=${{ secrets.SAVOIRA_POSTGRES_ADMIN_PASSWORD }} STORAGE_TYPE=local MESSAGE_QUEUE_TYPE=redis REACT_APP_SERVER_BASE_URL=${{ secrets.REACT_APP_SERVER_BASE_URL }} IS_BILLING_ENABLED=false'
         targetPort: 3000
         ingress: external
