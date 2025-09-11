@@ -73,6 +73,9 @@ jobs:
         resourceGroup: ${{ env.AZURE_RESOURCE_GROUP }}
         containerAppName: ${{ env.AZURE_WEBAPP_NAME }}
         imageToDeploy: ${{ needs.build.outputs.image-tag }}
+        registryUrl: ${{ env.CONTAINER_REGISTRY }}
+        registryUsername: ${{ secrets.AZURE_REGISTRY_USERNAME }}
+        registryPassword: ${{ secrets.AZURE_REGISTRY_PASSWORD }}
         environmentVariables: |
           PG_DATABASE_URL=${{ secrets.PG_DATABASE_URL }}
           REDIS_URL=${{ secrets.REDIS_URL }}
