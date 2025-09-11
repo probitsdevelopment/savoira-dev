@@ -89,4 +89,4 @@ jobs:
           REACT_APP_SERVER_BASE_URL=${{ secrets.REACT_APP_SERVER_BASE_URL }}
           IS_BILLING_ENABLED=false
         targetPort: 3000
-        ingress: external
+        ingress: external# Updated Azure Registry Credentials
