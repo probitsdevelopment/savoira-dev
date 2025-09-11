@@ -52,8 +52,8 @@ jobs:
         build-args: |
           REACT_APP_SERVER_BASE_URL=${{ secrets.REACT_APP_SERVER_BASE_URL }}
           APP_VERSION=${{ github.sha }}
-        cache-from: type=gha
-        cache-to: type=gha,mode=max
+        cache-from: type=registry,ref=${{ env.CONTAINER_REGISTRY }}/savoira-dev-app:cache
+        cache-to: type=registry,ref=${{ env.CONTAINER_REGISTRY }}/savoira-dev-app:cache,mode=max
 
   deploy:
     needs: build
