@@ -1,8 +1,9 @@
 name: CI E2E Playwright Tests
 on:
-  push:
-    branches:
-      - main
+  # Temporarily disabled to speed up deployments
+  # push:
+  #   branches:
+  #     - main
   pull_request:
     types: [opened, synchronize, reopened, labeled]
 
