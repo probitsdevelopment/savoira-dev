@@ -32,10 +32,17 @@ setup_and_migrate_db() {
     yarn command:prod upgrade
     echo "Successfully migrated DB!"
     
-    # Check if we should seed the workspace with dev data
-    echo "Checking if workspace seeding is needed..."
-    yarn command:prod workspace:seed:dev
-    echo "Successfully completed workspace seeding!"
+    # Check if we should seed the workspace with dev data (optional, non-blocking)
+    if [ "${DISABLE_DB_SEEDING}" != "true" ]; then
+        echo "Checking if workspace seeding is needed..."
+        if yarn command:prod workspace:seed:dev; then
+            echo "Successfully completed workspace seeding!"
+        else
+            echo "Warning: Workspace seeding failed, but continuing startup..."
+        fi
+    else
+        echo "Database seeding is disabled, skipping..."
+    fi
 }
 
 register_background_jobs() {
